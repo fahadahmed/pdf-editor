@@ -1,5 +1,11 @@
+import './footer.css';
+
 export default function Footer() {
   return (
-    <div>Footer component</div>
+    <footer className="footer">
+      <div className="footer-top-section">
+        <div className="footer-logo">PDF Editor</div>
+      </div>
+    </footer>
   )
 }
