@@ -1,6 +1,7 @@
 import { PDFDocument } from 'pdf-lib';
 import React, { useState } from 'react';
 import pkg from 'file-saver';
+import './mergepdf.css';
 
 const { saveAs } = pkg;
 
@@ -30,7 +31,7 @@ export default function MergePdf() {
 
   console.log("We are showing client side updated", pdfFiles)
   return (
-    <div>
+    <div className="merge-pdf-container">
       <h1>Merge PDF</h1>
       <input type="file" multiple accept='application/pdf' onChange={handleFileChange} />
       <button onClick={mergePdfs} disabled={pdfFiles.length === 0}>Merge</button>
