@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import pkg from 'file-saver';
 import './mergepdf.css';
 
+import MultiPdfUploader from '../../components/MultiPdfUploader';
+
 const { saveAs } = pkg;
 
 export default function MergePdf() {
@@ -29,12 +31,12 @@ export default function MergePdf() {
     saveAs(new Blob([mergedPdfBytes], { type: 'application/pdf' }), 'merged.pdf');
   }
 
-  console.log("We are showing client side updated", pdfFiles)
   return (
     <div className="merge-pdf-container">
       <h1>Merge PDF</h1>
-      <input type="file" multiple accept='application/pdf' onChange={handleFileChange} />
-      <button onClick={mergePdfs} disabled={pdfFiles.length === 0}>Merge</button>
+      {/* <input type="file" multiple accept='application/pdf' onChange={handleFileChange} />
+      <button onClick={mergePdfs} disabled={pdfFiles.length === 0}>Merge</button> */}
+      <MultiPdfUploader />
     </div>
   )
 }
