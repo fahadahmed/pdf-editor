@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800&family=Lalezar&display=swap');
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-logo {
+  font-family: 'Lalezar', system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.footer-top-section {
+  border-bottom: 1px solid #666;
+}

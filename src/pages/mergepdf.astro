@@ -1,7 +1,8 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { MergePdf } from '../views';
 ---
 
 <SiteLayout>
-  <a href="/mergepdf">Merge PDF</a>
+  <MergePdf client:load />
 </SiteLayout>

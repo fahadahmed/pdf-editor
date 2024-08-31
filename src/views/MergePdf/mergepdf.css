@@ -1,0 +1,5 @@
+.merge-pdf-container {
+  display: grid;
+  width: 100%;
+  place-content: center;
+}
