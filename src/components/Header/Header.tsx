@@ -10,8 +10,9 @@ export default function Header() {
           <a href="">Tools</a>
         </div>
         <div className="actions">
-          <Button type="button" label="Dashboard" />
-          <Button type="button" label="Logout" />
+          <form action="/api/auth/signout">
+            <Button type="submit" label="Logout" />
+          </form>
         </div>
       </div>
     </div>

@@ -1,0 +1,15 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { app } from "../firebase/server";
+import { getAuth } from 'firebase-admin/auth';
+
+const auth = getAuth(app);
+if(!Astro.cookies.has('__session')) {
+  return Astro.redirect('/signin');
+}
+---
+
+<SiteLayout>
+  <h1>Dashboard Page</h1>
+  <a href="/mergepdf">Merge PDF Documents</a>
+</SiteLayout>

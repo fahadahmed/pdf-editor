@@ -1,0 +1,21 @@
+---
+import { getAuth } from 'firebase-admin/auth';
+import { app } from '../firebase/server';
+import { SignInForm } from '../views';
+
+const auth = getAuth(app);
+if (Astro.cookies.has('__session')) {
+  const sessionCookie = Astro.cookies.get('__session')?.value;
+  let decodedCookie;
+  if (sessionCookie) {
+    decodedCookie = await auth.verifySessionCookie(sessionCookie)
+  }
+  if (decodedCookie) {
+    return Astro.redirect('/dashboard')
+  }
+}
+---
+
+<h1>Sign In</h1>
+<p>New user? <a href="/register">Create an account</a></p>
+<SignInForm client:load />
