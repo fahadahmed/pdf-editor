@@ -1,6 +1,10 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { MergePdf } from '../views';
+
+if(!Astro.cookies.has('__session')) {
+  return Astro.redirect('/signin');
+}
 ---
 
 <SiteLayout>

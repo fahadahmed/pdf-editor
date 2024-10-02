@@ -1,5 +1,4 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
 import { getAuth } from 'firebase-admin/auth';
 import { app } from '../firebase/server';
 import { SignInForm } from '../views';
@@ -17,7 +16,6 @@ if (Astro.cookies.has('__session')) {
 }
 ---
 
-<SiteLayout>
-  <h1>Sign In</h1>
-  <SignInForm client:load/>
-</SiteLayout>
+<h1>Sign In</h1>
+<p>New user? <a href="/register">Create an account</a></p>
+<SignInForm client:load />
